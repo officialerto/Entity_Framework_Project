@@ -1,0 +1,15 @@
+C:\Users\Ertugrul\source\repos\EntityFrameworkAppSon\EntityFrameworkAppSon\obj\Debug\EntityFrameworkAppSon.csproj.AssemblyReference.cache
+C:\Users\Ertugrul\source\repos\EntityFrameworkAppSon\EntityFrameworkAppSon\obj\Debug\EntityFrameworkAppSon.Form1.resources
+C:\Users\Ertugrul\source\repos\EntityFrameworkAppSon\EntityFrameworkAppSon\obj\Debug\EntityFrameworkAppSon.Properties.Resources.resources
+C:\Users\Ertugrul\source\repos\EntityFrameworkAppSon\EntityFrameworkAppSon\obj\Debug\EntityFrameworkAppSon.csproj.GenerateResource.cache
+C:\Users\Ertugrul\source\repos\EntityFrameworkAppSon\EntityFrameworkAppSon\obj\Debug\EntityFrameworkAppSon.csproj.CoreCompileInputs.cache
+C:\Users\Ertugrul\source\repos\EntityFrameworkAppSon\EntityFrameworkAppSon\bin\Debug\EntityFrameworkAppSon.exe.config
+C:\Users\Ertugrul\source\repos\EntityFrameworkAppSon\EntityFrameworkAppSon\bin\Debug\EntityFrameworkAppSon.exe
+C:\Users\Ertugrul\source\repos\EntityFrameworkAppSon\EntityFrameworkAppSon\bin\Debug\EntityFrameworkAppSon.pdb
+C:\Users\Ertugrul\source\repos\EntityFrameworkAppSon\EntityFrameworkAppSon\bin\Debug\EntityFramework.dll
+C:\Users\Ertugrul\source\repos\EntityFrameworkAppSon\EntityFrameworkAppSon\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Ertugrul\source\repos\EntityFrameworkAppSon\EntityFrameworkAppSon\bin\Debug\EntityFramework.xml
+C:\Users\Ertugrul\source\repos\EntityFrameworkAppSon\EntityFrameworkAppSon\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Ertugrul\source\repos\EntityFrameworkAppSon\EntityFrameworkAppSon\obj\Debug\EntityFrameworkAppSon.csproj.CopyComplete
+C:\Users\Ertugrul\source\repos\EntityFrameworkAppSon\EntityFrameworkAppSon\obj\Debug\EntityFrameworkAppSon.exe
+C:\Users\Ertugrul\source\repos\EntityFrameworkAppSon\EntityFrameworkAppSon\obj\Debug\EntityFrameworkAppSon.pdb
