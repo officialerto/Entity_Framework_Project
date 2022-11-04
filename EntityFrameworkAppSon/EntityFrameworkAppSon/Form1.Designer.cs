@@ -65,6 +65,15 @@ namespace EntityFrameworkAppSon
             this.BtnDersListesi = new System.Windows.Forms.Button();
             this.BtnNotListesi = new System.Windows.Forms.Button();
             this.BtnProsedur = new System.Windows.Forms.Button();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.BtnLinqEntity = new System.Windows.Forms.Button();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.radioButton7 = new System.Windows.Forms.RadioButton();
+            this.radioButton8 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -133,6 +142,7 @@ namespace EntityFrameworkAppSon
             this.BtnBul.TabIndex = 5;
             this.BtnBul.Text = "Bul";
             this.BtnBul.UseVisualStyleBackColor = true;
+            this.BtnBul.Click += new System.EventHandler(this.BtnBul_Click);
             // 
             // groupBox1
             // 
@@ -194,6 +204,7 @@ namespace EntityFrameworkAppSon
             this.TxtAd.Name = "TxtAd";
             this.TxtAd.Size = new System.Drawing.Size(146, 31);
             this.TxtAd.TabIndex = 17;
+            this.TxtAd.TextChanged += new System.EventHandler(this.TxtAd_TextChanged);
             // 
             // label2
             // 
@@ -436,11 +447,127 @@ namespace EntityFrameworkAppSon
             this.BtnProsedur.UseVisualStyleBackColor = true;
             this.BtnProsedur.Click += new System.EventHandler(this.BtnProsedur_Click);
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.radioButton1.Location = new System.Drawing.Point(932, 12);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(177, 22);
+            this.radioButton1.TabIndex = 26;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Ada Göre Sırala(A-->Z)";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // BtnLinqEntity
+            // 
+            this.BtnLinqEntity.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BtnLinqEntity.Location = new System.Drawing.Point(932, 557);
+            this.BtnLinqEntity.Name = "BtnLinqEntity";
+            this.BtnLinqEntity.Size = new System.Drawing.Size(131, 37);
+            this.BtnLinqEntity.TabIndex = 27;
+            this.BtnLinqEntity.Text = "LINQ Entity";
+            this.BtnLinqEntity.UseVisualStyleBackColor = true;
+            this.BtnLinqEntity.Click += new System.EventHandler(this.BtnLinqEntity_Click);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.radioButton2.Location = new System.Drawing.Point(932, 53);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(177, 22);
+            this.radioButton2.TabIndex = 28;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Ada Göre Sırala(Z-->A)";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.radioButton3.Location = new System.Drawing.Point(932, 95);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(88, 22);
+            this.radioButton3.TabIndex = 29;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "İlk 3 Kayıt";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.radioButton4.Location = new System.Drawing.Point(932, 136);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(161, 22);
+            this.radioButton4.TabIndex = 30;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "ID\'ye Göre Veri Getir";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // radioButton5
+            // 
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.radioButton5.Location = new System.Drawing.Point(932, 179);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(172, 22);
+            this.radioButton5.TabIndex = 31;
+            this.radioButton5.TabStop = true;
+            this.radioButton5.Text = "A ile Başlayanları Getir";
+            this.radioButton5.UseVisualStyleBackColor = true;
+            // 
+            // radioButton6
+            // 
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.radioButton6.Location = new System.Drawing.Point(932, 226);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(145, 22);
+            this.radioButton6.TabIndex = 32;
+            this.radioButton6.TabStop = true;
+            this.radioButton6.Text = "A ile Bitenleri Getir";
+            this.radioButton6.UseVisualStyleBackColor = true;
+            // 
+            // radioButton7
+            // 
+            this.radioButton7.AutoSize = true;
+            this.radioButton7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.radioButton7.Location = new System.Drawing.Point(932, 271);
+            this.radioButton7.Name = "radioButton7";
+            this.radioButton7.Size = new System.Drawing.Size(120, 22);
+            this.radioButton7.TabIndex = 33;
+            this.radioButton7.TabStop = true;
+            this.radioButton7.Text = "Değer Var mı?";
+            this.radioButton7.UseVisualStyleBackColor = true;
+            // 
+            // radioButton8
+            // 
+            this.radioButton8.AutoSize = true;
+            this.radioButton8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.radioButton8.Location = new System.Drawing.Point(932, 316);
+            this.radioButton8.Name = "radioButton8";
+            this.radioButton8.Size = new System.Drawing.Size(175, 22);
+            this.radioButton8.TabIndex = 34;
+            this.radioButton8.TabStop = true;
+            this.radioButton8.Text = "Toplam Öğrenci Sayısı";
+            this.radioButton8.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1243, 705);
+            this.ClientSize = new System.Drawing.Size(1113, 705);
+            this.Controls.Add(this.radioButton8);
+            this.Controls.Add(this.radioButton7);
+            this.Controls.Add(this.radioButton6);
+            this.Controls.Add(this.radioButton5);
+            this.Controls.Add(this.radioButton4);
+            this.Controls.Add(this.radioButton3);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.BtnLinqEntity);
+            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.BtnProsedur);
             this.Controls.Add(this.BtnNotListesi);
             this.Controls.Add(this.BtnDersListesi);
@@ -463,6 +590,7 @@ namespace EntityFrameworkAppSon
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -504,6 +632,15 @@ namespace EntityFrameworkAppSon
         private System.Windows.Forms.Button BtnNotGuncelle;
         private System.Windows.Forms.Button BtnHesapla;
         private System.Windows.Forms.Button BtnProsedur;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Button BtnLinqEntity;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton radioButton5;
+        private System.Windows.Forms.RadioButton radioButton6;
+        private System.Windows.Forms.RadioButton radioButton7;
+        private System.Windows.Forms.RadioButton radioButton8;
     }
 }
 

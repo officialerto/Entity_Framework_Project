@@ -41,6 +41,8 @@ namespace EntityFrameworkAppSon
         private void BtnOgrenciListele_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = db.TBLOGRENCI.ToList();
+            dataGridView1.Columns[3].Visible = false;
+            dataGridView1.Columns[4].Visible = false;
         }
 
         private void BtnNotListesi_Click(object sender, EventArgs e)
@@ -105,8 +107,81 @@ namespace EntityFrameworkAppSon
         }
 
         private void BtnProsedur_Click(object sender, EventArgs e)
-        {
+        {   //VERİTABANINDA YAPTIĞIMIZ PROSEDÜRÜ MODEL'DEN UPDATE ETTİK VE ONLARI PROSEDÜR TUŞUNDAN LİSTELETTİK.
+            dataGridView1.DataSource = db.NOTLISTESI();
+        }
 
+        private void BtnBul_Click(object sender, EventArgs e)
+        {   //TXT.AD BLOĞUNA YAZDIĞIMIZ DEĞERİ X ADINDA SALLAMASYON BİR ŞEY UYDURDUK O DEĞERE BAĞLADIK ONUNLA ARAMA YAPACAĞIZ ÇÜNKÜ VE TXT'YE YAZDIĞIMIZ ŞEYİ 'AD' KISMINDA ARATIYORUZ
+            dataGridView1.DataSource = db.TBLOGRENCI.Where(x => x.AD == TxtAd.Text & x.SOYAD == TxtSoyad.Text).ToList();
+        }
+
+        private void TxtAd_TextChanged(object sender, EventArgs e)
+        {   //Txtad kutucuğuna girilecek değeri string olarak atadık. Sonra LINQ sorgusuyla 'Contains' metodu kullanarak o kelimeyi içeriyorsa listele dedik
+            string aranan = TxtAd.Text;
+            var degerler = from item in db.TBLOGRENCI
+                           where item.AD.Contains(aranan)
+                           select item;
+            dataGridView1.DataSource = degerler.ToList();
+
+        }
+
+        private void BtnLinqEntity_Click(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked == true)
+            {   //RADIO BUTTON SEÇİLİ OLDUĞUNDA ADA GÖRE SIRALIYOR
+                List<TBLOGRENCI> liste1 = db.TBLOGRENCI.OrderBy(p => p.AD).ToList();
+                dataGridView1.DataSource = liste1;
+            }
+
+            if (radioButton2.Checked == true)
+            {   //RADIO BUTTON SEÇİLİ OLDUĞUNDA ADA GÖRE TERSTEN SIRALIYOR
+                List<TBLOGRENCI> liste2 = db.TBLOGRENCI.OrderByDescending(p => p.AD).ToList();
+                dataGridView1.DataSource = liste2;
+            }
+
+            if (radioButton3.Checked == true)
+            {   //İlk 3 değeri getiren sorgu
+                List<TBLOGRENCI> liste3 = db.TBLOGRENCI.OrderBy(p => p.AD).Take(3).ToList();
+                dataGridView1.DataSource = liste3;
+            }
+
+            if(radioButton4.Checked == true)
+            {   //ID=5 olanı getiren sorgu
+                List<TBLOGRENCI> liste4 = db.TBLOGRENCI.Where(p => p.ID == 5).ToList();
+                dataGridView1.DataSource = liste4;
+            }
+
+            if (radioButton5.Checked == true)
+            {   //A ile başlayanları getiren sorgu
+                List<TBLOGRENCI> liste5 = db.TBLOGRENCI.Where(p => p.AD.StartsWith("a")).ToList();
+                dataGridView1.DataSource = liste5;
+            }
+
+            if (radioButton6.Checked == true)
+            {   //A ile başlayanları getiren sorgu
+                List<TBLOGRENCI> liste6 = db.TBLOGRENCI.Where(p => p.AD.EndsWith("a")).ToList();
+                dataGridView1.DataSource = liste6;
+            }
+
+            if (radioButton7.Checked == true)
+            {   //Değer var mı yok mu onu kontrol ediyor
+                bool deger = db.TBLDERSLER.Any();
+                MessageBox.Show(deger.ToString(), "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            if (radioButton8.Checked == true)
+            {   //Count yapıyor 
+                int toplam = db.TBLOGRENCI.Count();
+                MessageBox.Show(toplam.ToString(), "Toplam Öğrenci Sayısı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }
+
+
+
+
+
+
+

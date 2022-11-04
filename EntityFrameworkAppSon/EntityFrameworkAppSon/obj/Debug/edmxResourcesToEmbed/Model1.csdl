@@ -69,5 +69,35 @@
       <End Role="TBLOGRENCI" EntitySet="TBLOGRENCI" />
       <End Role="TBLNOTLAR" EntitySet="TBLNOTLAR" />
     </AssociationSet>
+    <EntitySet Name="TBLKULUPLER" EntityType="DbSinavOgrenciModel.TBLKULUPLER" />
+    <EntitySet Name="sysdiagrams" EntityType="DbSinavOgrenciModel.sysdiagrams" />
+    <FunctionImport Name="NOTLISTESI" ReturnType="Collection(DbSinavOgrenciModel.NOTLISTESI_Result)" />
   </EntityContainer>
+  <EntityType Name="TBLKULUPLER">
+    <Key>
+      <PropertyRef Name="KULUPID" />
+    </Key>
+    <Property Name="KULUPID" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KULUPAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <ComplexType Name="NOTLISTESI_Result">
+    <Property Type="Int32" Name="NOTID" Nullable="false" />
+    <Property Type="String" Name="AD_SOYAD" Nullable="true" MaxLength="41" />
+    <Property Type="String" Name="DERSAD" Nullable="true" MaxLength="50" />
+    <Property Type="Int16" Name="SINAV1" Nullable="true" />
+    <Property Type="Int16" Name="SINAV2" Nullable="true" />
+    <Property Type="Int16" Name="SINAV3" Nullable="true" />
+    <Property Type="Decimal" Name="ORTALAMA" Nullable="true" Precision="5" Scale="2" />
+    <Property Type="Boolean" Name="DURUM" Nullable="true" />
+  </ComplexType>
 </Schema>
